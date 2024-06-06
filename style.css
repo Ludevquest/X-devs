@@ -1,0 +1,202 @@
+body {
+	font-family: "Outfit";
+	background-image: url('img/fundo-base.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	overflow: hidden;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.cabecalho h1 {
+	color: white;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+}
+.personagens-slider {
+		position: relative;
+		width: 100%;
+		max-width: 300px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+.btn-seta {
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: white;
+		border: none;
+		cursor: pointer;
+		z-index: 2;
+		padding: 10px;
+		border-radius: 50%;
+		transition: transform 0.5s ease-in-out; /* Adicionar transição suave */
+}
+.btn-seta:hover {
+	background-color: blueviolet;
+	transform: scale(1.1);
+}
+.btn-voltar {
+		left: 30%; /* Move button further outside */
+}
+.btn-avancar {
+		right: 28%; /* Move button further outside */
+}
+
+.slider-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+.lista-personagens {
+		display: flex;
+		transition: transform 1s ease-in-out;
+		width: 300%;
+}
+.cartao {
+		min-width: 20%;
+		box-sizing: border-box;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		padding: 5px;
+		background-size: cover;
+		background-position: center;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+		margin: 2px;
+		color: white;
+		text-shadow: 1px 1px 2px black;
+		padding-bottom: 5px;
+		transition:  transform 0.5s ease-in-out;
+}
+.cartao.selecionado {
+	display: flex;
+	transform: scale(1);
+}
+.cartao.lateral {
+display: flex;
+transform: scale(0.8); /* Diminuir tamanho dos cards laterais */
+}
+
+.imagem-personagem {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+}
+.descricao {
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.7); /* Fundo preto transparente */
+		border-radius: 10px;
+		padding: 5px;
+		margin-top: 5px;
+		position: relative;
+}
+.descricao .titulo {
+		margin-bottom: 3px;
+		background-color: rgba(0, 0, 0, 0.7);
+		border-radius: 10px;
+		padding: 5px;
+		position: relative;
+}
+
+.descricao .texto {
+	color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(255, 255, 255, 0.7); /* Fundo branco transparente */
+	padding: 5px;
+	border-radius: 5px;
+	max-height: 80px; /* Limitar a altura do parágrafo */
+	overflow-y: auto; /* Barra de rolagem para o parágrafo */
+	scrollbar-width: thin; /* Barra de rolagem mais fina no Firefox */
+	top: calc(100% + 5px);
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Estilizar barra de rolagem para Webkit (Chrome, Safari) */
+.descricao .texto::-webkit-scrollbar {
+width: 8px;
+}
+
+.descricao .texto::-webkit-scrollbar-thumb {
+background: rgba(255, 255, 255, 0.5);
+border-radius: 4px;
+}
+
+.descricao .texto::-webkit-scrollbar-thumb:hover {
+background: rgba(255, 255, 255, 0.7);
+}
+
+/* Classes para imagens de fundo específicas */
+.fundo-1 {
+		background-image: url('img/fundo-1.jpg');
+}
+.fundo-2 {
+		background-image: url('img/fundo-2.jpg');
+}
+.fundo-3 {
+		background-image: url('img/fundo-3.jpg');
+}
+.fundo-4 {
+		background-image: url('img/fundo-4.jpg');
+}
+.fundo-5 {
+		background-image: url('img/fundo-5.jpg');
+}
+.fundo-6 {
+		background-image: url('img/fundo-6.jpg');
+}
+
+@media screen and (max-width: 768px) {
+.personagens-slider {
+flex-direction: column;
+align-items: center;
+}
+
+.slider-wrapper {
+width: 100%;
+max-width: 90%;
+}
+
+.btn-wrapper {
+width: 100%;
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px; /* Espaçamento entre os botões e os cards */
+}
+
+.btn-seta {
+font-size: 18px;
+padding: 8px;
+}
+
+.btn-voltar {
+margin-left: 15px;
+}
+
+.btn-avancar {
+margin-right: 15px;
+}
+
+.cartao {
+min-width: 30%;
+}
+}
